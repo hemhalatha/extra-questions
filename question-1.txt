@@ -1,0 +1,47 @@
+
+Title: Measuring Search Time Complexity Based on Position in Linear Search
+
+Objective:
+This program is designed to analyze the time taken by a Linear Search operation depending on where the searched element is located in the sequence—specifically comparing best, average, and worst case search positions:
+- Start (Best Case)
+- Middle (Average Case)
+- End (Worst Case)
+
+The code simulates these scenarios on randomly generated sequences of increasing length and plots the average time taken for each case.
+
+Methodology:
+1. Sequence Generation:
+   - For each input size (5000, 10000, 15000, 20000), a random sequence is generated using random.sample() to ensure unique elements.
+
+2. Search Trials:
+   - For each length, the search is repeated 500 times (defined by num_trials) to minimize the effect of random fluctuations.
+   - In each trial, the following are searched using the `in` operator (linear search):
+     - The first element (Start) — simulates best case.
+     - The middle element (Middle) — simulates average case.
+     - The last element (End) — simulates worst case.
+
+3. Timing Measurement:
+   - The time.time() function captures the duration of each search.
+   - Cumulative search time for each position is recorded and averaged over the trials.
+
+4. Visualization:
+   - The average times for each case (Start, Middle, End) are plotted against the sequence lengths using Matplotlib.
+   - The graph clearly demonstrates how search time increases based on element position and input size.
+
+Expected Time Complexities:
+
+| Case   | Expected Time Complexity | Reason                                  |
+|--------|--------------------------|------------------------------------------|
+| Start  | O(1)                     | Element found at the first index         |
+| Middle | O(n/2)                   | Element found halfway through the list   |
+| End    | O(n)                     | Element found at the last index          |
+
+Results Interpretation:
+- The Start search has the smallest, near-constant time growth.
+- The Middle search grows proportionally with list size.
+- The End search grows linearly, taking the most time.
+
+This supports the theoretical analysis that Linear Search is efficient only when the searched element is near the beginning. Its performance degrades linearly as the element is positioned farther in the sequence.
+
+Conclusion:
+This simulation effectively demonstrates the practical time complexity of linear search in Python. The results highlight the importance of element positioning and suggest that linear search is not ideal for large datasets where the target element may appear near the end.
