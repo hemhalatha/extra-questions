@@ -1,0 +1,46 @@
+Objective:
+
+The objective of this analysis is to evaluate the number of comparisons required in a Linear Search algorithm across different input sizes. Specifically, we measure and compare the comparisons made in three scenarios:
+
+Best Case: The element is found at the beginning of the list.
+
+Average Case: The element is found at a random position.
+
+Worst Case: The element is found at the end of the list.
+
+Methodology:
+
+We implemented a linear search function that counts the number of comparisons made while searching for a target value in a list. The algorithm is applied to lists of varying sizes: 100, 500, 1000, 5000, and 10000 elements.
+
+For each list size:
+
+Best Case: The first element is searched. This case represents the minimal number of comparisons (O(1)).
+
+Average Case: The search is repeated 100 times with randomly chosen elements, and the average number of comparisons is calculated. This approximates O(n/2) behavior.
+
+Worst Case: The last element is searched, resulting in the maximum number of comparisons (O(n)).
+
+Results:
+
+The data collected is plotted using a line graph, where the x-axis represents the input size (n), and the y-axis represents the number of comparisons made.
+
+Observations:
+
+Best Case: Constant time – the number of comparisons remains fixed regardless of list size.
+
+Average Case: Linear growth – comparisons increase proportionally to half the size of the list.
+
+Worst Case: Linear growth – comparisons grow directly with the list size.
+
+Theoretical Expectations vs. Empirical Findings:
+
+Case	Theoretical Complexity	Observed Trend
+Best Case	O(1)	Constant comparisons
+Average Case	O(n/2)	Linear growth (slope ~0.5n)
+Worst Case	O(n)	Linear growth (slope ~1.0n)
+
+The empirical results align with the theoretical expectations, confirming that Linear Search exhibits linear time complexity in the average and worst cases.
+
+Conclusion:
+
+Linear Search is a simple and intuitive searching algorithm. However, its performance degrades linearly with the input size in the worst and average scenarios. While suitable for small or unsorted datasets, it is inefficient for large datasets compared to more advanced searching techniques like Binary Search or Hash-based search, which offer logarithmic or constant time complexity respectively.
